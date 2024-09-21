@@ -1,10 +1,8 @@
-import http from "http";
+import app from "./src/app.js";
 
-const server = http.createServer((request, response) => {
-    response.writeHead(200, { "Content-type": "text/plain" });
-    response.end("Your server is running!");
+const PORT = 3000;
+ 
+app.listen(PORT, () => {
+    console.log(`API listening on ${PORT}`);
 });
 
-server.listen(3000, () => {
-    console.log('Server listening!');
-});
