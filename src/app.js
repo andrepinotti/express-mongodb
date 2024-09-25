@@ -19,11 +19,6 @@ app.get("/", (req, res) => {
     res.status(200).send("API running");
 });
 
-app.get('/books',  async (req, res) => {
-    const listBooks = await book.find({});
-    res.status(200).json(listBooks)
-})
-
 app.get('/books/:id', (req, res) => {
     const index = findAuthors(req.params.id);
     res.status(200).json(books[index])
